@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete HTML Elements and Attributes Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+            display: block;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .sidebar a:hover {
+            background-color: var(--light);
+            color: var(--secondary);
+        }
+        
+        .content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .tag-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 4px solid var(--secondary);
+            background-color: #f9f9f9;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tag-name {
+            font-family: monospace;
+            background-color: var(--dark);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background-color: #f0f8ff;
+            border: 1px solid var(--secondary);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        pre {
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        
+        .demo {
+            background-color: #fff;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--light);
+        }
+        
+        .attribute-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complete HTML Elements & Attributes Guide</h1>
+        <p>A comprehensive reference with examples for all major HTML tags and attributes</p>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h3>HTML Categories</h3>
+            <ul>
+                <li><a href="#document-structure">Document Structure</a></li>
+                <li><a href="#text-content">Text Content</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#forms">Forms & Input</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#semantic">Semantic Elements</a></li>
+                <li><a href="#interactive">Interactive Elements</a></li>
+                <li><a href="#attributes">Global Attributes</a></li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <!-- Document Structure Section -->
+            <section id="document-structure">
+                <h2>Document Structure</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;!DOCTYPE&gt;</span> - Document Type Declaration</h3>
+                    <p>Defines the document type and version of HTML.</p>
+                    <div class="example-box">
+                        <pre>&lt;!DOCTYPE html&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;html&gt;</span> - Root Element</h3>
+                    <p>The root element of an HTML document.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>lang</code> - Specifies the language of the document</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;html lang="en"&gt;
+  &lt;!-- Content goes here --&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;head&gt;</span> - Document Head</h3>
+                    <p>Contains meta information about the document.</p>
+                    <div class="example-box">
+                        <pre>&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;body&gt;</span> - Document Body</h3>
+                    <p>Contains the visible content of the document.</p>
+                    <div class="example-box">
+                        <pre>&lt;body&gt;
+  &lt;h1&gt;My First Heading&lt;/h1&gt;
+  &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;</pre>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Text Content Section -->
+            <section id="text-content">
+                <h2>Text Content</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;h1&gt; to &lt;h6&gt;</span> - Headings</h3>
+                    <p>Define HTML headings from most important (h1) to least important (h6).</p>
+                    <div class="example-box">
+                        <pre>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <h6>Heading 6</h6>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;p&gt;</span> - Paragraph</h3>
+                    <p>Defines a paragraph of text.</p>
+                    <div class="example-box">
+                        <pre>&lt;p&gt;This is a paragraph of text. It can contain &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <p>This is a paragraph of text. It can contain <strong>bold text</strong> and <em>italic text</em>.</p>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;a&gt;</span> - Anchor (Link)</h3>
+                    <p>Creates a hyperlink to other web pages, files, or locations.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>href</code> - Specifies the URL of the link</li>
+                            <li><code>target</code> - Specifies where to open the linked document</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example.com&lt;/a&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <a href="#text-content" target="_blank">Visit Example.com</a>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</span> - Lists</h3>
+                    <p><code>&lt;ul&gt;</code> defines an unordered list, <code>&lt;ol&gt;</code> defines an ordered list, and <code>&lt;li&gt;</code> defines list items.</p>
+                    <div class="example-box">
+                        <pre>&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <ul>
+                            <li>First item</li>
+                            <li>Second item</li>
+                            <li>Third item</li>
+                        </ul>
+                        <ol>
+                            <li>First item</li>
+                            <li>Second item</li>
+                            <li>Third item</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Multimedia Section -->
+            <section id="multimedia">
+                <h2>Multimedia</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;img&gt;</span> - Image</h3>
+                    <p>Embeds an image in the document.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>src</code> - Specifies the path to the image</li>
+                            <li><code>alt</code> - Specifies an alternate text for the image</li>
+                            <li><code>width</code>, <code>height</code> - Set the dimensions</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;img src="https://via.placeholder.com/150" alt="Placeholder image" width="150" height="150"&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <img src="https://via.placeholder.com/150" alt="Placeholder image" width="150" height="150">
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;audio&gt;</span> - Audio</h3>
+                    <p>Embeds sound content in the document.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>src</code> - Specifies the audio file</li>
+                            <li><code>controls</code> - Adds audio controls</li>
+                            <li><code>autoplay</code> - Starts playing automatically</li>
+                            <li><code>loop</code> - Repeats the audio</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;video&gt;</span> - Video</h3>
+                    <p>Embeds video content in the document.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>src</code> - Specifies the video file</li>
+                            <li><code>controls</code> - Adds video controls</li>
+                            <li><code>width</code>, <code>height</code> - Set the dimensions</li>
+                            <li><code>autoplay</code> - Starts playing automatically</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</pre>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Forms Section -->
+            <section id="forms">
+                <h2>Forms & Input</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;form&gt;</span> - Form</h3>
+                    <p>Creates an HTML form for user input.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>action</code> - Specifies where to send form data</li>
+                            <li><code>method</code> - Specifies HTTP method (GET or POST)</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <form action="/submit" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;input&gt;</span> - Input Field</h3>
+                    <p>Creates an input field where users can enter data.</p>
+                    <div class="attribute-list">
+                        <strong>Attributes:</strong>
+                        <ul>
+                            <li><code>type</code> - Specifies the input type (text, password, email, etc.)</li>
+                            <li><code>name</code> - Specifies the name of the input</li>
+                            <li><code>placeholder</code> - Shows hint text</li>
+                            <li><code>required</code> - Makes the field mandatory</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <pre>&lt;input type="text" name="username" placeholder="Enter username" required&gt;
+&lt;input type="password" name="password" placeholder="Enter password" required&gt;
+&lt;input type="email" name="email" placeholder="Enter email" required&gt;
+&lt;input type="number" name="age" min="1" max="100"&gt;
+&lt;input type="date" name="birthdate"&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <input type="text" name="username" placeholder="Enter username" required><br><br>
+                        <input type="password" name="password" placeholder="Enter password" required><br><br>
+                        <input type="email" name="email" placeholder="Enter email" required><br><br>
+                        <input type="number" name="age" min="1" max="100"><br><br>
+                        <input type="date" name="birthdate">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tables Section -->
+            <section id="tables">
+                <h2>Tables</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;table&gt;</span> - Table</h3>
+                    <p>Defines an HTML table.</p>
+                    <div class="example-box">
+                        <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Month&lt;/th&gt;
+    &lt;th&gt;Savings&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;January&lt;/td&gt;
+    &lt;td&gt;$100&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;February&lt;/td&gt;
+    &lt;td&gt;$80&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <table>
+                            <tr>
+                                <th>Month</th>
+                                <th>Savings</th>
+                            </tr>
+                            <tr>
+                                <td>January</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>February</td>
+                                <td>$80</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Semantic Elements Section -->
+            <section id="semantic">
+                <h2>Semantic Elements</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;header&gt;</span> - Header</h3>
+                    <p>Represents introductory content or navigation links.</p>
+                    <div class="example-box">
+                        <pre>&lt;header&gt;
+  &lt;h1&gt;Website Title&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;footer&gt;</span> - Footer</h3>
+                    <p>Represents the footer of a document or section.</p>
+                    <div class="example-box">
+                        <pre>&lt;footer&gt;
+  &lt;p&gt;Copyright &copy; 2023&lt;/p&gt;
+  &lt;p&gt;&lt;a href="mailto:info@example.com"&gt;Contact Us&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;</pre>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;article&gt;</span> - Article</h3>
+                    <p>Represents self-contained content.</p>
+                    <div class="example-box">
+                        <pre>&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;Article content goes here...&lt;/p&gt;
+&lt;/article&gt;</pre>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Interactive Elements Section -->
+            <section id="interactive">
+                <h2>Interactive Elements</h2>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;details&gt; & &lt;summary&gt;</span> - Details Disclosure</h3>
+                    <p>Creates a disclosure widget that can be toggled open and closed.</p>
+                    <div class="example-box">
+                        <pre>&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  &lt;p&gt;This is the hidden content that appears when you click the summary.&lt;/p&gt;
+&lt;/details&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <details>
+                            <summary>Click to expand</summary>
+                            <p>This is the hidden content that appears when you click the summary.</p>
+                        </details>
+                    </div>
+                </div>
+                
+                <div class="tag-section">
+                    <h3><span class="tag-name">&lt;dialog&gt;</span> - Dialog Box</h3>
+                    <p>Represents a dialog box or modal window.</p>
+                    <div class="example-box">
+                        <pre>&lt;dialog id="myDialog"&gt;
+  &lt;p&gt;This is a dialog box!&lt;/p&gt;
+  &lt;button id="closeDialog"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;button id="openDialog"&gt;Open Dialog&lt;/button&gt;
+
+&lt;script&gt;
+  document.getElementById('openDialog').addEventListener('click', function() {
+    document.getElementById('myDialog').showModal();
+  });
+  
+  document.getElementById('closeDialog').addEventListener('click', function() {
+    document.getElementById('myDialog').close();
+  });
+&lt;/script&gt;</pre>
+                    </div>
+                    <div class="demo">
+                        <dialog id="myDialog">
+                            <p>This is a dialog box!</p>
+                            <button id="closeDialog">Close</button>
+                        </dialog>
+                        <button id="openDialog">Open Dialog</button>
+                        
+                        <script>
+                            document.getElementById('openDialog').addEventListener('click', function() {
+                                document.getElementById('myDialog').showModal();
+                            });
+                            
+                            document.getElementById('closeDialog').addEventListener('click', function() {
+                                document.getElementById('myDialog').close();
+                            });
+                        </script>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Global Attributes Section -->
+            <section id="attributes">
+                <h2>Global Attributes</h2>
+                
+                <div class="tag-section">
+                    <h3>Common Global Attributes</h3>
+                    <p>These attributes can be used on any HTML element.</p>
+                    
+                    <table>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td><code>class</code></td>
+                            <td>Specifies one or more class names for an element</td>
+                            <td><code>&lt;p class="highlight"&gt;Text&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>Specifies a unique id for an element</td>
+                            <td><code>&lt;div id="header"&gt;...&lt;/div&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>style</code></td>
+                            <td>Specifies inline CSS styles</td>
+                            <td><code>&lt;p style="color:red;"&gt;Red text&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>Provides additional information about an element</td>
+                            <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>data-*</code></td>
+                            <td>Used to store custom data private to the page</td>
+                            <td><code>&lt;div data-user-id="123"&gt;User&lt;/div&gt;</code></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>This guide covers the most commonly used HTML elements and attributes. HTML5 introduced many semantic elements that improve accessibility and SEO.</p>
+        <p>Created as a learning resource - not all possible HTML elements are included.</p>
+    </footer>
+</body>
+</html>
